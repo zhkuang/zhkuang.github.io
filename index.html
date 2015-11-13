@@ -182,6 +182,47 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Mac安装Go" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/13/Mac安装Go/" class="article-date">
+  	<time datetime="2015-11-13T05:51:52.000Z" itemprop="datePublished">2015-11-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>官网下载pkg包，一键安装，默认已经配置好GOROOT。</p>
+<p>GOPATH的配置就比较蛋疼了，搞了半天，最终用以下方式可以实现</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># golang二进制包安装的位置</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="operator">-d</span> /usr/<span class="built_in">local</span>/go ];<span class="keyword">then</span></span><br><span class="line">    GOROOT=/usr/<span class="built_in">local</span>/go</span><br><span class="line">    <span class="built_in">export</span> GOROOT</span><br><span class="line">    <span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$GOROOT</span>/bin</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 我的golang工作目录</span></span><br><span class="line">GO_WORKSPACE=/Users/raijin/project/go</span><br><span class="line"><span class="keyword">if</span> [ <span class="operator">-d</span> <span class="variable">$GO_WORKSPACE</span> ];<span class="keyword">then</span></span><br><span class="line">    <span class="built_in">export</span> GOPATH=<span class="variable">$GO_WORKSPACE</span></span><br><span class="line">    <span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$GOPATH</span>/bin</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="built_in">unset</span> GO_WORKSPACE</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-静态资源服务器nginx 搭建" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
